@@ -3,7 +3,7 @@
     "dev": "nodemon --watch . --exec hive ."
   },
   "dependencies": {
-    "hive": "file:./../../paralect-hive",
+    "@paralect/hive": "^0.0.1",
     "joi": "^17.13.3",
     "psl": "^1.9.0"
   },
