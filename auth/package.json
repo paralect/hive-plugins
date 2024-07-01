@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "nodemon --watch . --exec hive ."
+  },
+  "dependencies": {
+    "hive": "file:./../../paralect-hive",
+    "joi": "^17.13.3",
+    "psl": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
