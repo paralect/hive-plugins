@@ -9,7 +9,4 @@ module.exports = Joi.object({
   }).required(),
   token: Joi.string().required(),
   otp: Joi.string().allow(null).allow(''),
-  page: Joi.object({
-    _id: Joi.string(),
-  }).allow(null),
 });

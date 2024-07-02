@@ -1,8 +1,8 @@
 const psl = require('psl');
 const url = require('url');
-const { env } = require('config');
+const { env } = require('app-config');
 
-const { webUri } = require('config');
+const { webUri } = require('app-config');
 
 let cookiesDomain;
 
