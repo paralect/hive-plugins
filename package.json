@@ -1,18 +1,16 @@
 {
-  "name": "google-oauth",
+  "name": "hive-plugins",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch . --exec hive run ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "google-auth-library": "^9.11.0",
-    "joi": "^17.13.3",
-    "lodash": "^4.17.21"
+    "@paralect/hive": "^0.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
