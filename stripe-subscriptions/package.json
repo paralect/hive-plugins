@@ -1,0 +1,16 @@
+{
+  "name": "stripe-subscriptions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch . --exec hive run ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^16.1.0",
+    "hive": "file://../../paralect-hive"
+  }
+}
