@@ -1,5 +1,4 @@
-const Joi = require("joi");
-
+import Joi from "joi";
 const users = {
   subscription: Joi.object({
     id: Joi.string(),
@@ -8,10 +7,8 @@ const users = {
     cancelledOn: Joi.date(),
     isStopped: Joi.boolean(),
   }),
-
   stripe: Joi.object({
-    id:  Joi.string(),
+    id: Joi.string(),
   }),
 };
-
-module.exports = users;
+export default users;
