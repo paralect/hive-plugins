@@ -1,11 +1,8 @@
-const Joi = require('joi');
-
-const googleAuth = require('services/googleAuth');
-
-module.exports.handler = async (ctx) => {
-  if (ctx.get('Content-Type') === 'application/json') {
+import Joi from "joi";
+import googleAuth from "services/googleAuth";
+export const handler = async (ctx) => {
+  if (ctx.get("Content-Type") === "application/json") {
     ctx.status = 302;
-
     ctx.body = {
       url: googleAuth.oAuthURL({ url: ctx.request.query.redirect_to }),
     };
@@ -13,14 +10,12 @@ module.exports.handler = async (ctx) => {
     ctx.redirect(
       googleAuth.oAuthURL({
         url: ctx.request.query.redirect_to,
-      })
+      }),
     );
   }
 };
-
-module.exports.endpoint = {
-  url: '/google/url',
-  method: 'get',
+export const endpoint = {
+  url: "/google/url",
+  method: "get",
 };
-
-module.exports.requestSchema = Joi.object({});
+export const requestSchema = Joi.object({});

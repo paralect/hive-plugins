@@ -1,7 +1,7 @@
-const config = require('app-config');
+import config from "app-config";
+import stripe$0 from "stripe";
 
-config.assert('stripe');
+config.assert("stripe");
+const stripe = stripe$0(config.stripe.secretKey);
 
-const stripe = require('stripe')(config.stripe.secretKey);
-
-module.exports = stripe;
+export default stripe;

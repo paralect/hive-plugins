@@ -1,11 +1,8 @@
-const Joi = require('joi');
-
-const isAuthorized = require('middlewares/isAuthorized');
-const uploadFile = require('middlewares/uploadFile');
-
-const uploadAndStoreFile = require('resources/files/methods/uploadAndStoreFile');
-
-module.exports.handler = async (ctx) => {
+import Joi from "joi";
+import isAuthorized from "middlewares/isAuthorized";
+import uploadFile from "middlewares/uploadFile";
+import uploadAndStoreFile from "resources/files/methods/uploadAndStoreFile";
+export const handler = async (ctx) => {
   const { file } = ctx.request;
   let createdFile = await uploadAndStoreFile({
     file,
@@ -13,12 +10,9 @@ module.exports.handler = async (ctx) => {
   });
   ctx.body = createdFile;
 };
-
-module.exports.middlewares = [isAuthorized, uploadFile.single('file')];
-
-module.exports.endpoint = {
-  url: '/',
-  method: 'post',
+export const middlewares = [isAuthorized, uploadFile.single("file")];
+export const endpoint = {
+  url: "/",
+  method: "post",
 };
-
-module.exports.requestSchema = Joi.object({});
+export const requestSchema = Joi.object({});

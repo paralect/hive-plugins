@@ -1,20 +1,17 @@
-const fileService = require('db').services.files;
-const cloudStorageService = require('services/storageService');
-
-module.exports = async ({ file, userId, customerId }) => {
+import db from "db";
+import cloudStorageService from "services/storageService";
+const fileService = db.services.files;
+export default async ({ file, userId, customerId }) => {
   const fileName = `${Date.now()}-${file.originalname}`;
-
   const data = await cloudStorageService.uploadPublic(
     `stream/${customerId || userId}/${fileName}`,
-    file
+    file,
   );
-  let { Location:url } = data;
-
+  let { Location: url } = data;
   const createdFile = await fileService.create({
     creator: { _id: userId },
     name: file.originalname,
     url,
   });
-
   return createdFile;
 };
